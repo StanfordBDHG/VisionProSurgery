@@ -20,11 +20,6 @@ The Stanford BDHG **Vision Pro Surgery** repository contains two applications wh
 ## Applications
 The repository consists of a _**SpeziServer**_ app which enables users to interface their computers with a surgical video tower and start a local network video stream. The _**VisionProSurgery**_ app enables fast and easy connection to the live video stream on the Vision Pro headset. 
 
-<p align="center">
-  <img src="README_assets/SpeziServer1.png" alt="speziserver1" width="400"/>
-  <img src="README_assets/SpeziServer2.png" alt="speziserver2" width="300"/>
-</p>
-
 ## Required Hardware and Setup
 
 1. **Computer** (Mac or Windows)  
@@ -67,10 +62,34 @@ python3 /SpeziServerApp/spezi_server.py
 
 Open the Spezi Vision Pro app (VisionProSurgery.xcodeproj) through Xcode's simulator or by running it on a physical Vision Pro (learn more here).
 
+## Starting Video Stream
+<p align="center">
+  <img src="README_assets/SpeziServer1.png" alt="speziserver1" width="400"/>
+</p>
 
+> [!WARNING]
+>
+> - Before continuing, ensure that your computer is connected to a WiFi network that the Vision Pro can also be connected to
+> - Both devices will need to be on the **same WiFi** for video streaming to work
 
+On the launch screen of the SpeziServer app as shown above, you can configure the following settings:
 
+1. **Video Port ID**: this depends on the video stream and varies based on the video tower output.
+2. **Width** and **Height**: this will determine the size of the video stream that will then be recieved by the Vision Pro
+3. **FPS (frames per second)**: adjust for smoother video viewing
 
+> [!NOTE]
+>
+> - Increasing the FPS/width/height can lead to more delays in video streaming
+> - For higher FPS and resolution, you will need a very stable WiFi connection
+
+<p align="center">
+  <img src="README_assets/SpeziServer2.png" alt="speziserver1" width="400"/>
+</p>
+
+After launching, the SpeziServer app will show you the port and IP address that you will enter into the Vision Pro for connection.
+
+## Connecting VisionProSurgery to your video stream
 
 ## Continous Delivery Workflows
 
