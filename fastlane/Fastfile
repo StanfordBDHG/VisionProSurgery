@@ -1,5 +1,5 @@
 #
-# This source file is part of the StanfordBDHG Template Application project
+# This source file is part of the StanfordBDHG VisionProSurgery project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -100,7 +100,7 @@ platform :ios do
       ],
       destination: "generic/platform=iOS",
       output_directory: ".build",
-      archive_path: ".build/TemplateApplication.xcarchive",
+      archive_path: ".build/VisionProSurgery.xcarchive",
     )
     # This is an unfortunate workaround for a bug in fastlane: https://github.com/fastlane/fastlane/pull/21319
     Dir.chdir("..") do
@@ -109,7 +109,7 @@ platform :ios do
         xcodebuild \
           -exportArchive \
           -exportOptionsPlist ./fastlane/ExportOptions.plist \
-          -archivePath ./.build/TemplateApplication.xcarchive \
+          -archivePath ./.build/VisionProSurgery.xcarchive \
           -exportPath ./.build
         "
       )
@@ -137,7 +137,7 @@ platform :ios do
     build
     commit = last_git_commit
     upload_to_testflight(
-      ipa: "./.build/TemplateApplication.ipa",
+      ipa: "./.build/VisionProSurgery.ipa",
       distribute_external: true,
       groups: [
         "External Testers"

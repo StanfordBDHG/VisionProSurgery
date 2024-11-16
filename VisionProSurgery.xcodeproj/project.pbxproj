@@ -1,0 +1,807 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F7025D12A969ACA007C36EF /* VisionProSurgeryWatchApplication.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2F7025C42A969AC9007C36EF /* VisionProSurgeryWatchApplication.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F7025D62A969F05007C36EF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA42A967534004B6129 /* WebView.swift */; };
+		2F7025D72A969F05007C36EF /* VisionProSurgery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA32A967534004B6129 /* VisionProSurgery.swift */; };
+		2F7025D82A969F11007C36EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371BAA6129EFAB1A00011A7C /* Assets.xcassets */; };
+		2F709F802A96836500086E61 /* VisionProSurgeryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709F7F2A96836500086E61 /* VisionProSurgeryUITests.swift */; };
+		2FC27AA52A967534004B6129 /* VisionProSurgery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA32A967534004B6129 /* VisionProSurgery.swift */; };
+		2FC27AA62A967534004B6129 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA42A967534004B6129 /* WebView.swift */; };
+		2FEC3D652A9680EF0084272E /* VisionProSurgeryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC3D642A9680EF0084272E /* VisionProSurgeryTests.swift */; };
+		371BAA6229EFAB1A00011A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371BAA6129EFAB1A00011A7C /* Assets.xcassets */; };
+		4358866F2CE940AE000B44DF /* SetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358866E2CE940AB000B44DF /* SetUp.swift */; };
+		435886702CE940AE000B44DF /* SetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358866E2CE940AB000B44DF /* SetUp.swift */; };
+		435886722CE940CE000B44DF /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435886712CE940CD000B44DF /* Start.swift */; };
+		435886732CE940CE000B44DF /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435886712CE940CD000B44DF /* Start.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F7025CF2A969ACA007C36EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F7025C32A969AC9007C36EF;
+			remoteInfo = "VisionProSurgeryWatchApplication Watch App";
+		};
+		2F709F832A96836500086E61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371BAA5929EFAB1900011A7C;
+			remoteInfo = VisionProSurgery;
+		};
+		2FEC3D662A9680EF0084272E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371BAA5929EFAB1900011A7C;
+			remoteInfo = VisionProSurgery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F7025D22A969ACA007C36EF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2F7025D12A969ACA007C36EF /* VisionProSurgeryWatchApplication.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F7025C42A969AC9007C36EF /* VisionProSurgeryWatchApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionProSurgeryWatchApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F709F7D2A96836500086E61 /* VisionProSurgeryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionProSurgeryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F709F7F2A96836500086E61 /* VisionProSurgeryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProSurgeryUITests.swift; sourceTree = "<group>"; };
+		2FC27AA02A9673A0004B6129 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2FC27AA22A96740E004B6129 /* MIT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIT.txt; sourceTree = "<group>"; };
+		2FC27AA32A967534004B6129 /* VisionProSurgery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionProSurgery.swift; sourceTree = "<group>"; };
+		2FC27AA42A967534004B6129 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2FC27AA72A967A0E004B6129 /* watchOS Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "watchOS Info.plist"; sourceTree = "<group>"; };
+		2FEC3D622A9680EF0084272E /* VisionProSurgeryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisionProSurgeryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FEC3D642A9680EF0084272E /* VisionProSurgeryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProSurgeryTests.swift; sourceTree = "<group>"; };
+		2FEC3D6B2A96815E0084272E /* VisionProSurgery.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VisionProSurgery.xctestplan; sourceTree = "<group>"; };
+		371BAA5A29EFAB1900011A7C /* VisionProSurgery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionProSurgery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		371BAA6129EFAB1A00011A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4358866E2CE940AB000B44DF /* SetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUp.swift; sourceTree = "<group>"; };
+		435886712CE940CD000B44DF /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F7025C12A969AC9007C36EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F709F7A2A96836500086E61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FEC3D5F2A9680EF0084272E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371BAA5729EFAB1900011A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F709F7E2A96836500086E61 /* VisionProSurgeryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2F709F7F2A96836500086E61 /* VisionProSurgeryUITests.swift */,
+			);
+			path = VisionProSurgeryUITests;
+			sourceTree = "<group>";
+		};
+		2FC27AA12A96740E004B6129 /* LICENSES */ = {
+			isa = PBXGroup;
+			children = (
+				2FC27AA22A96740E004B6129 /* MIT.txt */,
+			);
+			path = LICENSES;
+			sourceTree = "<group>";
+		};
+		2FEC3D632A9680EF0084272E /* VisionProSurgeryTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FEC3D642A9680EF0084272E /* VisionProSurgeryTests.swift */,
+			);
+			path = VisionProSurgeryTests;
+			sourceTree = "<group>";
+		};
+		371BAA5129EFAB1900011A7C = {
+			isa = PBXGroup;
+			children = (
+				2FC27AA02A9673A0004B6129 /* README.md */,
+				2FEC3D6B2A96815E0084272E /* VisionProSurgery.xctestplan */,
+				371BAA5C29EFAB1900011A7C /* VisionProSurgery */,
+				2FEC3D632A9680EF0084272E /* VisionProSurgeryTests */,
+				2F709F7E2A96836500086E61 /* VisionProSurgeryUITests */,
+				371BAA5B29EFAB1900011A7C /* Products */,
+				2FC27AA12A96740E004B6129 /* LICENSES */,
+			);
+			sourceTree = "<group>";
+		};
+		371BAA5B29EFAB1900011A7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				371BAA5A29EFAB1900011A7C /* VisionProSurgery.app */,
+				2FEC3D622A9680EF0084272E /* VisionProSurgeryTests.xctest */,
+				2F709F7D2A96836500086E61 /* VisionProSurgeryUITests.xctest */,
+				2F7025C42A969AC9007C36EF /* VisionProSurgeryWatchApplication.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		371BAA5C29EFAB1900011A7C /* VisionProSurgery */ = {
+			isa = PBXGroup;
+			children = (
+				435886712CE940CD000B44DF /* Start.swift */,
+				4358866E2CE940AB000B44DF /* SetUp.swift */,
+				2FC27AA42A967534004B6129 /* WebView.swift */,
+				2FC27AA32A967534004B6129 /* VisionProSurgery.swift */,
+				2FC27AA72A967A0E004B6129 /* watchOS Info.plist */,
+				371BAA6129EFAB1A00011A7C /* Assets.xcassets */,
+			);
+			path = VisionProSurgery;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F7025C32A969AC9007C36EF /* VisionProSurgeryWatchApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F7025D52A969ACA007C36EF /* Build configuration list for PBXNativeTarget "VisionProSurgeryWatchApplication" */;
+			buildPhases = (
+				2F7025C02A969AC9007C36EF /* Sources */,
+				2F7025C12A969AC9007C36EF /* Frameworks */,
+				2F7025C22A969AC9007C36EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VisionProSurgeryWatchApplication;
+			productName = "VisionProSurgeryWatchApplication Watch App";
+			productReference = 2F7025C42A969AC9007C36EF /* VisionProSurgeryWatchApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F709F7C2A96836500086E61 /* VisionProSurgeryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F709F872A96836500086E61 /* Build configuration list for PBXNativeTarget "VisionProSurgeryUITests" */;
+			buildPhases = (
+				2F709F792A96836500086E61 /* Sources */,
+				2F709F7A2A96836500086E61 /* Frameworks */,
+				2F709F7B2A96836500086E61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F709F842A96836500086E61 /* PBXTargetDependency */,
+			);
+			name = VisionProSurgeryUITests;
+			productName = VisionProSurgeryUITests;
+			productReference = 2F709F7D2A96836500086E61 /* VisionProSurgeryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2FEC3D612A9680EF0084272E /* VisionProSurgeryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FEC3D6A2A9680EF0084272E /* Build configuration list for PBXNativeTarget "VisionProSurgeryTests" */;
+			buildPhases = (
+				2FEC3D5E2A9680EF0084272E /* Sources */,
+				2FEC3D5F2A9680EF0084272E /* Frameworks */,
+				2FEC3D602A9680EF0084272E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FEC3D672A9680EF0084272E /* PBXTargetDependency */,
+			);
+			name = VisionProSurgeryTests;
+			productName = VisionProSurgeryTests;
+			productReference = 2FEC3D622A9680EF0084272E /* VisionProSurgeryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		371BAA5929EFAB1900011A7C /* VisionProSurgery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 371BAA6929EFAB1A00011A7C /* Build configuration list for PBXNativeTarget "VisionProSurgery" */;
+			buildPhases = (
+				371BAA5629EFAB1900011A7C /* Sources */,
+				371BAA5729EFAB1900011A7C /* Frameworks */,
+				371BAA5829EFAB1900011A7C /* Resources */,
+				2F7025D22A969ACA007C36EF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F7025D02A969ACA007C36EF /* PBXTargetDependency */,
+			);
+			name = VisionProSurgery;
+			productName = FlashCard;
+			productReference = 371BAA5A29EFAB1900011A7C /* VisionProSurgery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		371BAA5229EFAB1900011A7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					2F7025C32A969AC9007C36EF = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					2F709F7C2A96836500086E61 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 371BAA5929EFAB1900011A7C;
+					};
+					2FEC3D612A9680EF0084272E = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 371BAA5929EFAB1900011A7C;
+					};
+					371BAA5929EFAB1900011A7C = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 371BAA5529EFAB1900011A7C /* Build configuration list for PBXProject "VisionProSurgery" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 371BAA5129EFAB1900011A7C;
+			packageReferences = (
+			);
+			productRefGroup = 371BAA5B29EFAB1900011A7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				371BAA5929EFAB1900011A7C /* VisionProSurgery */,
+				2F7025C32A969AC9007C36EF /* VisionProSurgeryWatchApplication */,
+				2FEC3D612A9680EF0084272E /* VisionProSurgeryTests */,
+				2F709F7C2A96836500086E61 /* VisionProSurgeryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F7025C22A969AC9007C36EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F7025D82A969F11007C36EF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F709F7B2A96836500086E61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FEC3D602A9680EF0084272E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371BAA5829EFAB1900011A7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371BAA6229EFAB1A00011A7C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F7025C02A969AC9007C36EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435886722CE940CE000B44DF /* Start.swift in Sources */,
+				2F7025D62A969F05007C36EF /* WebView.swift in Sources */,
+				2F7025D72A969F05007C36EF /* VisionProSurgery.swift in Sources */,
+				435886702CE940AE000B44DF /* SetUp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F709F792A96836500086E61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F709F802A96836500086E61 /* VisionProSurgeryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FEC3D5E2A9680EF0084272E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FEC3D652A9680EF0084272E /* VisionProSurgeryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371BAA5629EFAB1900011A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435886732CE940CE000B44DF /* Start.swift in Sources */,
+				2FC27AA52A967534004B6129 /* VisionProSurgery.swift in Sources */,
+				2FC27AA62A967534004B6129 /* WebView.swift in Sources */,
+				4358866F2CE940AE000B44DF /* SetUp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F7025D02A969ACA007C36EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 2F7025C32A969AC9007C36EF /* VisionProSurgeryWatchApplication */;
+			targetProxy = 2F7025CF2A969ACA007C36EF /* PBXContainerItemProxy */;
+		};
+		2F709F842A96836500086E61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 371BAA5929EFAB1900011A7C /* VisionProSurgery */;
+			targetProxy = 2F709F832A96836500086E61 /* PBXContainerItemProxy */;
+		};
+		2FEC3D672A9680EF0084272E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 371BAA5929EFAB1900011A7C /* VisionProSurgery */;
+			targetProxy = 2FEC3D662A9680EF0084272E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2F7025D32A969ACA007C36EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637867499T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "VisionProSurgery/watchOS Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = VisionProSurgeryWatchApplication;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = edu.stanford.visionprosurgery;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.watchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		2F7025D42A969ACA007C36EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=watchos*]" = 637867499T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "VisionProSurgery/watchOS Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = VisionProSurgeryWatchApplication;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = edu.stanford.visionprosurgery;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.watchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = VisionProSurgeryWatchApplication;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		2F709F852A96836500086E61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TEST_TARGET_NAME = VisionProSurgery;
+			};
+			name = Debug;
+		};
+		2F709F862A96836500086E61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TEST_TARGET_NAME = VisionProSurgery;
+			};
+			name = Release;
+		};
+		2FEC3D682A9680EF0084272E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisionProSurgery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisionProSurgery";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		2FEC3D692A9680EF0084272E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisionProSurgery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisionProSurgery";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		371BAA6729EFAB1A00011A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKApplication = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		371BAA6829EFAB1A00011A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKApplication = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		371BAA6A29EFAB1A00011A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K6MGGPA4Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"GENERATE_INFOPLIST_FILE[sdk=watchos*]" = NO;
+				"GENERATE_INFOPLIST_FILE[sdk=watchsimulator*]" = NO;
+				"INFOPLIST_FILE[sdk=watchos*]" = "VisionProSurgery/watchOS Info.plist";
+				"INFOPLIST_FILE[sdk=watchsimulator*]" = "VisionProSurgery/watchOS Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=watchos*]" = edu.stanford.visionprosurgery.watchapp;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=watchsimulator*]" = edu.stanford.visionprosurgery.watchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		371BAA6B29EFAB1A00011A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K6MGGPA4Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"GENERATE_INFOPLIST_FILE[sdk=watchos*]" = NO;
+				"GENERATE_INFOPLIST_FILE[sdk=watchsimulator*]" = NO;
+				"INFOPLIST_FILE[sdk=watchos*]" = "VisionProSurgery/watchOS Info.plist";
+				"INFOPLIST_FILE[sdk=watchsimulator*]" = VisionProSurgery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.visionprosurgery;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=watchos*]" = edu.stanford.visionprosurgery.watchapp;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=watchsimulator*]" = edu.stanford.visionprosurgery.watchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F7025D52A969ACA007C36EF /* Build configuration list for PBXNativeTarget "VisionProSurgeryWatchApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F7025D32A969ACA007C36EF /* Debug */,
+				2F7025D42A969ACA007C36EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F709F872A96836500086E61 /* Build configuration list for PBXNativeTarget "VisionProSurgeryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F709F852A96836500086E61 /* Debug */,
+				2F709F862A96836500086E61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FEC3D6A2A9680EF0084272E /* Build configuration list for PBXNativeTarget "VisionProSurgeryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FEC3D682A9680EF0084272E /* Debug */,
+				2FEC3D692A9680EF0084272E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		371BAA5529EFAB1900011A7C /* Build configuration list for PBXProject "VisionProSurgery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371BAA6729EFAB1A00011A7C /* Debug */,
+				371BAA6829EFAB1A00011A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		371BAA6929EFAB1A00011A7C /* Build configuration list for PBXNativeTarget "VisionProSurgery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371BAA6A29EFAB1A00011A7C /* Debug */,
+				371BAA6B29EFAB1A00011A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 371BAA5229EFAB1900011A7C /* Project object */;
+}

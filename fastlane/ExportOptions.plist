@@ -6,10 +6,10 @@
 	<string>app-store</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>edu.stanford.templateapplication</key>
-		<string>TemplateApplication</string>
-		<key>edu.stanford.templateapplication.watchapp</key>
-		<string>TemplateWatchApplication</string>
+		<key>edu.stanford.visionprosurgery</key>
+		<string>VisionProSurgery</string>
+		<key>edu.stanford.visionprosurgery.watchapp</key>
+		<string>VisionProSurgeryWatchApplication</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution: Paul Schmiedmayer (637867499T)</string>

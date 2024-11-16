@@ -1,6 +1,6 @@
 <!--
 
-This source file is part of the StanfordBDHG Template Application project
+This source file is part of the StanfordBDHG VisionProSurgery project
 
 SPDX-FileCopyrightText: 2023 Stanford University
 
@@ -8,13 +8,13 @@ SPDX-License-Identifier: MIT
 
 -->
 
-# Template Application
+# VisionProSurgery
 
-[![Build and Test](https://github.com/StanfordBDHG/TemplateApplication/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/TemplateApplication/actions/workflows/build-and-test.yml)
-[![codecov](https://codecov.io/gh/StanfordBDHG/TemplateApplication/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/TemplateApplication)
+[![Build and Test](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml)
+[![codecov](https://codecov.io/gh/StanfordBDHG/VisionProSurgery/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/VisionProSurgery)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
-This repository contains the StanfordBDHG Template Application. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
+This repository contains the StanfordBDHG VisionProSurgery. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
 
 ## Continous Delivery Workflows
 
