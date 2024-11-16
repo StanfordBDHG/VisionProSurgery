@@ -2,19 +2,70 @@
 
 This source file is part of the StanfordBDHG VisionProSurgery project
 
-SPDX-FileCopyrightText: 2023 Stanford University
+SPDX-FileCopyrightText: 2024 Stanford University
 
 SPDX-License-Identifier: MIT
 
 -->
 
-# VisionProSurgery
+# <img src="logo.png" alt="Spezi VP Logo" width="50" height="50"> Vision Pro Surgery
 
 [![Build and Test](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml)
 [![codecov](https://codecov.io/gh/StanfordBDHG/VisionProSurgery/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/VisionProSurgery)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
-This repository contains the StanfordBDHG VisionProSurgery. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
+## Overview
+The Stanford BDHG **Vision Pro Surgery** repository contains two applications which together enable streaming of surgical video tower feed to the Vision Pro. The objective of this project is to allow for immersive and dynamic viewing of video feed during surgical procedures.
+
+## Applications
+The repository consists of a _**SpeziServer**_ app which enables users to interface their computers with a surgical video tower and start a local network video stream. The _**VisionProSurgery**_ app enables fast and easy connection to the live video stream on the Vision Pro headset. 
+
+## Required Hardware and Setup
+
+1. **Computer** (Mac or Windows)  
+   Used for running **SpeziServer** app
+2. **Vision Pro**  
+   Used for running **VisionProSurgery** app
+3. **Cables**  
+   - VGA to HDMI  
+   - DVI to HDMI
+4. **4K Capture Card**  
+
+> [!NOTE]
+>
+> - Please check the ports on your surgical video tower, some use VGI out and others DVI out.
+> - If you are using a Mac, use a 4K Capture Card that goes from **HDMI --> micro-hdmi**
+> - For Windows, use a 4K Capture Card that goes from **HDMI --> USB**
+> - We recommend purchasing this 4K Capture Card that works for both platforms: [Capture 1080P60 Streaming Recorder (Amazon)](https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7/ref=sr_1_1_sspa?crid=O64DRHSRVM7N&dib=eyJ2IjoiMSJ9.cCwrrm7emcy8GIgy9ZzjP5Y6B3yxYPaHMirGz0jJWTwLvMCLCN8MCpUSYiAVCisW5noYUh2hLNOhAr2qe_tkxfEu8audXN8g_32X-om8ttoO108fnSkwvz-8rkscsyDt1X5qDATWHYfH7gsHAUeJrrWKbKu8HUhcI17rssMfhcvEmEI1y-fGHPF4LOjkmIw4Ly3ZG9Idwt2ohppyOsPtlE0EPQUcf93Bsjq6nUYeg1g.AyxzX_oM36kNN2GYfX_ThfnkkePiCkkKoLFtRi2_7oY&dib_tag=se&keywords=hdmi+capture+card+for+windows&qid=1731794896&sprefix=hdmi+capture+card+for+windo%2Caps%2C146&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) 
+
+## Software Installation and Setup
+
+**Step 1: Downloading Repository**
+```bash
+git clone https://github.com/StanfordBDHG/VisionPro/
+```
+**Step 2: Installing SpeziServer Dependencies**
+
+For the Spezi Server app, you will need to install dependencies:
+```bash
+pip3 install -r /SpeziServerApp/requirements.txt
+```
+
+**Step 3: Launching SpeziServer App**
+
+Open the Spezi Server app using one of the executables(ref) or by running:
+```bash
+python3 /SpeziServerApp/spezi_server.py
+```
+
+**Step 4: Launching VisionProSurgery app**
+
+Open the Spezi Vision Pro app (VisionProSurgery.xcodeproj) through Xcode's simulator or by running it on a physical Vision Pro (learn more here).
+
+
+
+
+
 
 ## Continous Delivery Workflows
 
