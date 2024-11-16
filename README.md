@@ -8,7 +8,7 @@ SPDX-License-Identifier: MIT
 
 -->
 
-# <img src="logo.png" alt="Spezi VP Logo" width="50" height="50"> Vision Pro Surgery
+# <img src="README_assets/vp_logo.png" alt="Spezi VP Logo" width="50" height="50"> Vision Pro Surgery
 
 [![Build and Test](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml)
 [![codecov](https://codecov.io/gh/StanfordBDHG/VisionProSurgery/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/VisionProSurgery)
@@ -19,6 +19,11 @@ The Stanford BDHG **Vision Pro Surgery** repository contains two applications wh
 
 ## Applications
 The repository consists of a _**SpeziServer**_ app which enables users to interface their computers with a surgical video tower and start a local network video stream. The _**VisionProSurgery**_ app enables fast and easy connection to the live video stream on the Vision Pro headset. 
+
+<p align="center">
+  <img src="README_assets/SpeziServer1.png" alt="speziserver1" width="400"/>
+  <img src="README_assets/SpeziServer2.png" alt="speziserver2" width="300"/>
+</p>
 
 ## Required Hardware and Setup
 
