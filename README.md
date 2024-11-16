@@ -84,7 +84,7 @@ On the launch screen of the SpeziServer app as shown above, you can configure th
 > - For higher FPS and resolution, you will need a very stable WiFi connection
 
 <p align="center">
-  <img src="README_assets/SpeziServer2.png" alt="speziserver1" width="400"/>
+  <img src="README_assets/SpeziServer2.png" alt="speziserver2" width="400"/>
 </p>
 
 After launching, the SpeziServer app will show you the port and IP address that you will enter into the Vision Pro for connection.
