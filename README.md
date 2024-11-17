@@ -92,6 +92,10 @@ After launching, the SpeziServer app will show you the **port** and **IP address
 
 ## Connecting VisionProSurgery to your video stream
 
+<p align="center">
+  <img src="README_assets/VP1.png" alt="vp1" width="400"/>
+</p>
+
 ## Continous Delivery Workflows
 
 ### Beta Deployment
