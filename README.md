@@ -64,7 +64,7 @@ python3 /SpeziServerApp/spezi_server.py
 
 **Step 4: Launching Vision Pro Surgery app**
 
-Open the Spezi Vision Pro app ([VisionProSurgery.xcodeproj](https://github.com/StanfordBDHG/VisionProSurgery/tree/v1/VisionProSurgery.xcodeproj)) through Xcode's simulator or by running it on a physical Vision Pro ([learn more here](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)).
+Open the Spezi Vision Pro app ([VisionProSurgery.xcodeproj](https://github.com/StanfordBDHG/VisionProSurgery/tree/v1/VisionProSurgery.xcodeproj)) through the [Xcode](https://developer.apple.com/xcode/) simulator or by running it on a physical Vision Pro ([learn more here](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)).
 
 ## Starting Video Stream
 On the launch screen of the Spezi Server app as shown below, you can configure the following settings:
