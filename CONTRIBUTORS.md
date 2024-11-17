@@ -8,7 +8,9 @@ SPDX-License-Identifier: MIT
 
 -->
 
-VisionProSurgery Contributors
+Vision Pro Surgery Contributors
 =================================
 
+* [Adrit Rao](https://github.com/AdritRao)
 * [Paul Schmiedmayer](https://github.com/PSchmiedmayer)
+* [Oliver Aalami](https://github.com/aalami5)
