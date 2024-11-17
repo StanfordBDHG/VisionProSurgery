@@ -99,13 +99,13 @@ After launching, the SpeziServer app will show you the **port** and **IP address
 After running the Vision Pro app on either the simulator or physical device, you will be presented with the start screen as shown below. 
 
 <p align="center">
-  <img src="README_assets/VP_v1.png" alt="vp1" width="600"/>
+  <img src="README_assets/VP_v3-2.png" alt="vp1" width="600"/>
 </p>
 
 After tapping on _Get Started_, you will get to the set-up screen where you have to enter your **port number** and **IP address**.
 
 <p align="center">
-  <img src="README_assets/VP_v2.png" alt="vp2" width="600"/>
+  <img src="README_assets/VP_v3.png" alt="vp2" width="600"/>
 </p>
 
 > [!NOTE]
