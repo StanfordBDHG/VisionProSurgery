@@ -14,6 +14,10 @@ SPDX-License-Identifier: MIT
 [![codecov](https://codecov.io/gh/StanfordBDHG/VisionProSurgery/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/VisionProSurgery)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
+<p float="left">
+ <img alt="VP Overview" src="README_assets/VP_Banner_v4.png">
+</p>
+
 ## Overview
 The Stanford BDHG **Vision Pro Surgery** repository contains two applications which together enable streaming of surgical video tower feed to the Vision Pro. The objective of this project is to allow for immersive and dynamic viewing of video feed during surgical procedures.
 
