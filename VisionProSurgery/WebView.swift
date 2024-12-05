@@ -9,19 +9,6 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
-    let url: URL
-
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        let request = URLRequest(url: url)
-        uiView.load(request)
-    }
-}
-
 struct ContentView: View {
     @State private var width: Int = 640
     @State private var height: Int = 480
@@ -43,6 +30,19 @@ struct ContentView: View {
             }
         }
         .frame(width: 640, height: 480)
+    }
+}
+
+struct WebView: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
     }
 }
 
