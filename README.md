@@ -2,76 +2,116 @@
 
 This source file is part of the StanfordBDHG VisionProSurgery project
 
-SPDX-FileCopyrightText: 2023 Stanford University
+SPDX-FileCopyrightText: 2024 Stanford University
 
 SPDX-License-Identifier: MIT
 
 -->
 
-# VisionProSurgery
+# <img src="README_assets/vp_logo.png" alt="Spezi VP Logo" width="50" height="50"> Vision Pro Surgery
 
 [![Build and Test](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/VisionProSurgery/actions/workflows/build-and-test.yml)
 [![codecov](https://codecov.io/gh/StanfordBDHG/VisionProSurgery/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/VisionProSurgery)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
-This repository contains the StanfordBDHG VisionProSurgery. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
+<p float="left">
+ <img alt="VP Overview" src="README_assets/VP_Banner_v4.png">
+</p>
 
-## Continous Delivery Workflows
+## Overview
+The Stanford BDHG **Vision Pro Surgery** repository contains two applications which together enable streaming of surgical video tower feed to the Vision Pro. The objective of this project is to allow for immersive and dynamic viewing of video feed during surgical procedures.
 
-### Beta Deployment
+The repository consists of a **Spezi Server** app which enables users to interface their computers with a surgical video tower and start a local network video stream. The **Vision Pro Surgery** app enables fast and easy connection to the live video stream on the Vision Pro headset. 
 
-The Beta Deployment workflow is triggered when a new commit is added to the main branch. 
+## Required Hardware and Setup
+To get started, you will need to have the following hardware components:
+1. **Computer** (Mac or Windows)  
+   Used for running **SpeziServer** app
+2. **[Vision Pro](https://www.apple.com/apple-vision-pro/)**  
+   Used for running **VisionProSurgery** app
+3. **Bidrectional Cables**
+   - VGA to HDMI ([product recommendation](https://www.amazon.com/Amazon-Basics-Adapter-Cable-1-Pack/dp/B014I8UQJY/ref=sr_1_1?crid=1XTFPLUE35QHW&dib=eyJ2IjoiMSJ9.bbBAqhyMUGKrRbBBvLGSXcfIulzND4uhIq9MYCGLenGGkXTWU0oxlrTh1C7I2ZaQoR_x6HoPXC6wJWR0-EutcMK3OVqPVUdurhcDcjIgUquqUYIh_DA_tlmT0Zg_BAm3atFZ7UH4FMfzMgF97ecdVWHbsW_hfaOid4EGcOluMSU1W6csWsESCvTCDJGvCCWodMKVZLdDViO5Hlul5tW1ZQhh7v-On0q-gxnIfvJHdyc.8aizV0sffmUA6SRTPbncWGNcgNs1ERzODdw_dKDydOY&dib_tag=se&keywords=bidirectional%2BDVI%2Bto%2Bhdmi%2Bamazon%2Bbasics&qid=1731803403&sprefix=bidirectional%2Bdv%2Bto%2Bhdmi%2Bamazon%2Bbasics%2Caps%2C122&sr=8-1&th=1))
+   - DVI to HDMI ([product recommendation](https://www.amazon.com/Amazon-Basics-Adapter-Cable-1-Pack/dp/B014I8UQJY/ref=sr_1_3?crid=19EDU0Q1SR10V&dib=eyJ2IjoiMSJ9.fV4ZXtAVPq28yi_hxLQTyhEzIEFJiiDAkaU1nCEjGK3qoduZH1q66PPEDDdf4cc9Gtjthyx9phGUHo5FFJowcI9plEQdCcAKWY_167PDiAEoBdQt37FcCQqM9UVB6thvpuWyxjE8qte6RtpB-84u2_nK5Ph2d4ty4NC937Cz2zYesxVRfiKPzNj8i4q6UoEzafkwv2aA5wDicJPVpzAMQh9MDY2H8NfJS8iqCur0X74.v4I960Em13PIuFsOQaO2BfJXoElHot8_BvyFCM-bKd4&dib_tag=se&keywords=bidirectional+vga+to+hdmi+amazon+basics&qid=1731803318&sprefix=bidrectional+vga+to+hdmi+amazon+basics%2Caps%2C134&sr=8-3))  
+4. **4K Capture Card** ([product recommendation](https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7/ref=sr_1_1_sspa?crid=41CJ3H7PNSWK&dib=eyJ2IjoiMSJ9.5LhqAZbayJDt8SZj3Bavc-UhWNExK9aJbSP-Oiw6EDwwMN23cdpgd9Qr7xbZ-cnAhBeSgCbZ4AZb8Ghq33gYc_9__4mdqzDmZlo7pQTI9vBnADCMBvWWWJAb7kOe_vNqm5tB3oDTZA4LO5yK14bJay6CdZBQDS3jLVlsjcHkLdTHyzjDl865bUaViq45rBLxzcL1RB-Y8q2rypki9vlaCtFmkp3Y5oL8jzpAbOSVPKw.V65zMHmCehg_O6BwnB-0_1CbkYhUj63dfjaVcDDBZLA&dib_tag=se&keywords=hdmi+capture+card+4k&qid=1731803447&sprefix=hdmi+capture+card+4%2Caps%2C170&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1))
 
-It first runs the Build and Test workflow to ensure all tests are passing.
-Once the Build and Test workflow passes, it builds the iOS application so it can be archived and sent to [TestFlight](https://developer.apple.com/testflight/) for internal beta deployment.
+> [!NOTE]
+>
+> - Please check the ports on your surgical video tower, some use VGI out and others DVI out.
+> - If you are using a Mac, use a 4K Capture Card that goes from **HDMI --> micro-hdmi**
+> - For Windows, use a 4K Capture Card that goes from **HDMI --> USB**
+> - We recommend purchasing this 4K Capture Card that works for both platforms: [Capture 1080P60 Streaming Recorder (Amazon)](https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7/ref=sr_1_1_sspa?crid=O64DRHSRVM7N&dib=eyJ2IjoiMSJ9.cCwrrm7emcy8GIgy9ZzjP5Y6B3yxYPaHMirGz0jJWTwLvMCLCN8MCpUSYiAVCisW5noYUh2hLNOhAr2qe_tkxfEu8audXN8g_32X-om8ttoO108fnSkwvz-8rkscsyDt1X5qDATWHYfH7gsHAUeJrrWKbKu8HUhcI17rssMfhcvEmEI1y-fGHPF4LOjkmIw4Ly3ZG9Idwt2ohppyOsPtlE0EPQUcf93Bsjq6nUYeg1g.AyxzX_oM36kNN2GYfX_ThfnkkePiCkkKoLFtRi2_7oY&dib_tag=se&keywords=hdmi+capture+card+for+windows&qid=1731794896&sprefix=hdmi+capture+card+for+windo%2Caps%2C146&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) 
 
-### Build and Test
+## Software Installation and Setup
 
-The Build and Test workflow builds and tests the iOS application, shared Swift package, and web service. It runs all unit and user interface (UI) tests defined in the targets. The iOS application is tested on the iOS simulator on macOS. The shared and web service Swift packages are tested on Linux and macOS as well as in release and debug configuration to demonstrate all possible variations. 
+**Step 1: Downloading Repository**
 
-### SwiftLint
+```bash
+git clone https://github.com/StanfordBDHG/VisionPro/
+```
+**Step 2: Installing Spezi Server Dependencies**
 
-The Swiftlint workflow is triggered by every pull request (PR) and checks if the files found in the diff contain any [SwiftLint](https://github.com/realm/SwiftLint) violations.
-You can change the SwiftLint configuration in the `.swiftlint.yml` file found at the root of this repository.
+```bash
+pip3 install -r /SpeziServerApp/requirements.txt
+```
 
-## Continous Delivery Setup
+**Step 3: Launching Spezi Server App**
 
-It is a prerequisite to have access to an Apple Developer Account that allows [TestFlight](https://developer.apple.com/testflight/) releases and create an app in [App Store Connect](https://appstoreconnect.apple.com) that matches the bundle identifier you have defined in the App project.
+Open the Spezi Server app using one of the [executable files](https://github.com/StanfordBDHG/VisionProSurgery/tree/v1/SpeziServerApp/Executable)
+  or by running:
+```bash
+python3 /SpeziServerApp/spezi_server.py
+```
 
-### App Store Connect Access
+**Step 4: Launching Vision Pro Surgery app**
 
-The [TestFlight](https://developer.apple.com/testflight/) deployment requires access to the App Store Connect API using an API key. Please follow the Apple instructions to [Creating API Keys for the App Store Connect API](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api). The key needs the `App Manager` access role.
-Store the following information in the following GitHub secrets:
-- `APPLE_ID`: The Apple ID you use to access the App Store Connect API.
-- `APP_STORE_CONNECT_ISSUER_ID`: The issuer ID of the App Store Connect API is displayed in the App Store Connect API keys section.
-- `APP_STORE_CONNECT_API_KEY_ID`: The key ID of the API key created in the App Store Connect API keys section.
-- `APP_STORE_CONNECT_API_KEY_BASE64`: The content of the key created in App Store Connect condensed into a Base64 representation, e.g., using `base64 -i AuthKey_ABCDEFGHIJ.p8 | pbcopy`.
+Open the Spezi Vision Pro app ([VisionProSurgery.xcodeproj](https://github.com/StanfordBDHG/VisionProSurgery/tree/v1/VisionProSurgery.xcodeproj)) through the [Xcode](https://developer.apple.com/xcode/) simulator or by running it on a physical Vision Pro ([learn more here](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)).
 
-### Apple Xcode Certificate and Provisioning Profile
+## Starting Video Stream
+On the launch screen of the Spezi Server app as shown below, you can configure the following settings:
 
-The GitHub Action imports the Apple certificate and provisioning profile from the GitHub secrets and installs them in a local KeyChain on the GitHub runner instances.
-Please follow the GitHub instructions to [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/enterprise-server@3.4/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development).
+1. **Video Port ID**: this depends on the video stream and varies based on the surgical video tower output
+2. **Width** and **Height**: this will determine the size/resolution of the video stream that will be recieved by the Vision Pro
+3. **FPS (frames per second)**: adjust for smoother video viewing
 
-Obtaining the Apple provisioning profile requires you to follow the following steps:
-1. Register the app identifier in the [Apple Developer Account Identifiers section](https://developer.apple.com/account/resources/identifiers/list) using the bundle identifier for your application, e.g., `com.schmiedmayer.continousdelivery`.
-2. Create an **AppStore** distribution provisioning profile in the [Apple Developer Account Profiles section](https://developer.apple.com/account/resources/profiles/list) using the app identifier you have created in the previous step.
-3. Download the provisioning profile and convert it to a Base64 representation as detailed in [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/enterprise-server@3.4/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) and add it as the value for the `BUILD_PROVISION_PROFILE_BASE64` secret.
+> [!NOTE]
+>
+> - Increasing the FPS/width/height can lead to more delays and higher latency in video streaming
+> - For higher FPS and resolution, you will need a very stable WiFi connection
 
-After following the setup steps detailed in [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/enterprise-server@3.4/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) and obtaining the Apple provisioning profile as described above, you should have the following secrets configured in the repository settings:
-- `BUILD_CERTIFICATE_BASE64`: The Base64 version of the Apple signing certificate to build your iOS application.
-- `P12_PASSWORD`: The password for the Apple signing certificate.
-- `BUILD_PROVISION_PROFILE_BASE64`: The Base64 version of the Apple provisioning profile to build your iOS application.
-- `KEYCHAIN_PASSWORD`: A password for the keychain that will be created on the runner instance.
+<p align="center">
+  <img src="README_assets/SpeziServer1.png" alt="speziserver1" width="400"/>
+</p>
 
-Be sure that you update the name of the provisioning profile in the `Gymfile` and update the app name, bundle identifier, Xcode project name, paths, and other settings in the fastlane files when modifying the template to your needs!
+> [!WARNING]
+>
+> - Before starting the stream, ensure that your computer is connected to a WiFi network that the Vision Pro can also be connected to
+> - Both devices will need to be on the **same WiFi** for video streaming to work
 
-### Swift Package and Fastlane Update ACCESS_TOKEN
 
-The [Swift Package and Fastlane Update workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/update.yml) requires an `ACCESS_TOKEN` secret: a GitHub Personal Access Token (PAT) allowing write access to the repository.
-We suggest using a bot account to create the access token. Using the PAT triggers the GitHub Actions in the create PR. [The GitHub documentation provides instructions on creating a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). The [scrop of the token](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps) can be limited to the `public_repo` scope for public repositories or the `repo` scrope for private repositories as well as the `workflow` scope.
+<p align="center">
+  <img src="README_assets/SpeziServerv3.png" alt="speziserver2" width="400"/>
+</p>
 
-Removing the `token` input in the GitHub action workflow results in using the default `GITHUB_TOKEN` and the GitHub Action bot account that does not trigger any possible merge checks in the newly created PR.
+After launching, the SpeziServer app will show you the **port** and **IP address** that you will enter into the Vision Pro for connection.
+
+## Connecting Vision Pro to Video Stream
+
+After running the Vision Pro app on either the simulator or physical device, you will be presented with the start screen as shown below. 
+
+<p align="center">
+  <img src="README_assets/VP_v3-2.png" alt="vp1" width="600"/>
+</p>
+
+After tapping on _Get Started_, you will get to the set-up screen where you have to enter your **port number** and **IP address**.
+
+<p align="center">
+  <img src="README_assets/VP_v3.png" alt="vp2" width="600"/>
+</p>
+
+> [!NOTE]
+>
+> - You will find your local port number and IP address from the Spezi Server computer app ([see "Starting Video Stream"](#starting-video-stream))
 
 ### Contributors
 
-This project is based on [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery). You can find a list of contributors in the `CONTRIBUTORS.md` file.
+You can find a list of contributors in the `CONTRIBUTORS.md` file.
