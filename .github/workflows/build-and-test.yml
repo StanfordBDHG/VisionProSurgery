@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [iphone, ipad, apple_watch, apple_tv, vision_pro]
+        platform: [vision_pro]
     with:
       # We use the self-hosted runners as the main GitHub Action runners do not have the necessary performance.
       # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
