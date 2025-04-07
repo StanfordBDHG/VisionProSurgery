@@ -29,7 +29,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .frame(width: 640, height: 480)
+            .frame(width: 640, height: 480)
     }
 }
 
