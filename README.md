@@ -40,6 +40,12 @@ To get started, you will need to have the following hardware components:
 > - If you are using a Mac, use a 4K Capture Card that goes from **HDMI --> micro-hdmi**
 > - For Windows, use a 4K Capture Card that goes from **HDMI --> USB**
 > - We recommend purchasing this 4K Capture Card that works for both platforms: [Capture 1080P60 Streaming Recorder (Amazon)](https://www.amazon.com/Capture-1080P60-Streaming-Recorder-Compatible/dp/B08Z3XDYQ7/ref=sr_1_1_sspa?crid=O64DRHSRVM7N&dib=eyJ2IjoiMSJ9.cCwrrm7emcy8GIgy9ZzjP5Y6B3yxYPaHMirGz0jJWTwLvMCLCN8MCpUSYiAVCisW5noYUh2hLNOhAr2qe_tkxfEu8audXN8g_32X-om8ttoO108fnSkwvz-8rkscsyDt1X5qDATWHYfH7gsHAUeJrrWKbKu8HUhcI17rssMfhcvEmEI1y-fGHPF4LOjkmIw4Ly3ZG9Idwt2ohppyOsPtlE0EPQUcf93Bsjq6nUYeg1g.AyxzX_oM36kNN2GYfX_ThfnkkePiCkkKoLFtRi2_7oY&dib_tag=se&keywords=hdmi+capture+card+for+windows&qid=1731794896&sprefix=hdmi+capture+card+for+windo%2Caps%2C146&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) 
+   
+> [!TIP]
+>
+> - For improved streaming quality and lower latency, we recommend using a router to repeat the main WiFi signal
+> - The [GL.iNet GL-SFT1200 (Opal) router](https://www.amazon.com/GL-iNet-GL-SFT1200-Secure-Travel-Router/dp/B09N72FMH5/ref=sr_1_1?crid=29ZZ8I0RA27K3&dib=eyJ2IjoiMSJ9.CdF9W13giTcg0jLK51FLlE8ix81SBP9LvdUQuLvxgLMcQpNGJix49er9ETibF-xYWxVGSf-DWRJ6heA-rrdGoljxscD6TFwap63wIQkCTa3YEGliSyFr5UHvFzKPTPPr_tflD92sAlGU67uDfUUFB4q_CRuzSjpf9f2yreaB8XIPsavGX6tSiKFnTvIH9S_RFSpcE-le37Q5gngL49Cyg_H6TcvlglcmxZPmVFXsx9g.hvrKG1xf7EuV9URLzekDQ291Kb4vz6C0Y_pazYPKpkw&dib_tag=se&keywords=glinet%2Bopal&qid=1744048555&sprefix=glinet%2Bopal%2Caps%2C153&sr=8-1&th=1) is what we use in our experimentation for its small size and portability
+
 
 ## Software Installation and Setup
 
