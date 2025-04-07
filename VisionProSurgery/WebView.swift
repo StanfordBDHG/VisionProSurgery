@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var width: Int = 640
     @State private var height: Int = 480
     @State private var fps: Int = 20
+    
 
     var body: some View {
         ZStack {
@@ -33,8 +34,10 @@ struct ContentView: View {
     }
 }
 
+
 struct WebView: UIViewRepresentable {
     let url: URL
+    
 
     func makeUIView(context: Context) -> WKWebView {
         WKWebView()
@@ -45,6 +48,7 @@ struct WebView: UIViewRepresentable {
         uiView.load(request)
     }
 }
+
 
 #Preview {
     ContentView()

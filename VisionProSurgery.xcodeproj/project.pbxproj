@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,13 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2F7025CF2A969ACA007C36EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2F7025C32A969AC9007C36EF;
-			remoteInfo = "VisionProSurgeryWatchApplication Watch App";
-		};
 		2F709F832A96836500086E61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
@@ -77,6 +70,10 @@
 		4358866E2CE940AB000B44DF /* SetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUp.swift; sourceTree = "<group>"; };
 		435886712CE940CD000B44DF /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		43F11E272CF1230600CC939C /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F7025C12A969AC9007C36EF /* Frameworks */ = {
@@ -161,6 +158,7 @@
 		371BAA5C29EFAB1900011A7C /* VisionProSurgery */ = {
 			isa = PBXGroup;
 			children = (
+				43F11E272CF1230600CC939C /* Resources */,
 				435886712CE940CD000B44DF /* Start.swift */,
 				4358866E2CE940AB000B44DF /* SetUp.swift */,
 				2FC27AA42A967534004B6129 /* WebView.swift */,
@@ -185,6 +183,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				43F11E272CF1230600CC939C /* Resources */,
 			);
 			name = VisionProSurgeryWatchApplication;
 			productName = "VisionProSurgeryWatchApplication Watch App";
@@ -235,11 +236,14 @@
 				371BAA5729EFAB1900011A7C /* Frameworks */,
 				371BAA5829EFAB1900011A7C /* Resources */,
 				2F7025D22A969ACA007C36EF /* Embed Watch Content */,
+				43F11E262CF121B500CC939C /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2F7025D02A969ACA007C36EF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				43F11E272CF1230600CC939C /* Resources */,
 			);
 			name = VisionProSurgery;
 			productName = FlashCard;
@@ -254,7 +258,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					2F7025C32A969AC9007C36EF = {
 						CreatedOnToolsVersion = 15.0;
@@ -328,6 +332,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43F11E262CF121B500CC939C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n  export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F7025C02A969AC9007C36EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -370,12 +394,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2F7025D02A969ACA007C36EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 2F7025C32A969AC9007C36EF /* VisionProSurgeryWatchApplication */;
-			targetProxy = 2F7025CF2A969ACA007C36EF /* PBXContainerItemProxy */;
-		};
 		2F709F842A96836500086E61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 371BAA5929EFAB1900011A7C /* VisionProSurgery */;
@@ -613,6 +631,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -669,6 +688,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -676,14 +696,15 @@
 		371BAA6A29EFAB1A00011A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8K6MGGPA4Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				"GENERATE_INFOPLIST_FILE[sdk=watchos*]" = NO;
 				"GENERATE_INFOPLIST_FILE[sdk=watchsimulator*]" = NO;
@@ -710,20 +731,22 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
 		371BAA6B29EFAB1A00011A7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8K6MGGPA4Y;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				"GENERATE_INFOPLIST_FILE[sdk=watchos*]" = NO;
 				"GENERATE_INFOPLIST_FILE[sdk=watchsimulator*]" = NO;
@@ -750,6 +773,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
