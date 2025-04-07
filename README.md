@@ -67,6 +67,10 @@ Open the Spezi Server app using one of the [executable files](https://github.com
 ```bash
 python3 /SpeziServerApp/spezi_server.py
 ```
+> [!TIP]
+>
+> - You can create a local executable of the Spezi Server app by running the ```create_exe.py``` script
+> - Ensure you have [PyInstaller](https://pyinstaller.org/en/stable/) installed before running the script
 
 **Step 4: Launching Vision Pro Surgery app**
 
