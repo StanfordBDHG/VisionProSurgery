@@ -2,12 +2,13 @@
 Spezi Server module for Vision Pro Surgery streaming application.
 Provides video streaming capabilities through a Flask web server.
 """
+# pylint: disable=no-member
 
 import os
 import sys
 import socket
 import threading
-from typing import Generator
+from typing import Generator, Optional
 
 try:
     import cv2
@@ -19,47 +20,71 @@ except ImportError as e:
     print("Please install required packages: pip install flask opencv-python customtkinter pillow")
     sys.exit(1)
 
-app = Flask(__name__)
+class CameraState:
+    """Manages camera state and settings."""
+    def __init__(self):
+        self.camera: Optional[cv2.VideoCapture] = None
+        self.port: int = 0
+        self.width: int = 640
+        self.height: int = 480
+        self.fps: int = 20
 
-# Global state
-CAMERA = None
-VIDEO_PORT = 0
-CAMERA_WIDTH = 640
-CAMERA_HEIGHT = 480
-CAMERA_FPS = 20
+    def initialize_camera(self) -> bool:
+        """Initialize the camera with current settings."""
+        try:
+            # pylint: disable=no-member
+            self.camera = cv2.VideoCapture(self.port)
+            if not self.camera.isOpened():
+                print("Error: Could not open camera")
+                return False
+            self.update_settings()
+            return True
+        except AttributeError:
+            print("Error: VideoCapture not supported")
+            return False
+
+    def update_settings(self) -> None:
+        """Update camera resolution and FPS settings."""
+        if self.camera is not None:
+            try:
+                self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, self.width)
+                self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
+                self.camera.set(cv2.CAP_PROP_FPS, self.fps)
+            except AttributeError:
+                print("Warning: Camera properties not supported")
+
+    def get_frame(self) -> Optional[bytes]:
+        """Get a single frame from the camera."""
+        if self.camera is None:
+            return None
+
+        success, frame = self.camera.read()
+        if not success:
+            return None
+
+        try:
+            _, buffer = cv2.imencode('.jpg', frame)
+            return buffer.tobytes()
+        except AttributeError:
+            print("Warning: Video encoding not supported")
+            return None
+
+camera_state = CameraState()
+app = Flask(__name__)
 
 def resource_path(relative_path: str) -> str:
     """Get absolute path to resource for PyInstaller."""
     base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
     return os.path.join(base_path, relative_path)
 
-def update_camera_settings(width: int, height: int, fps: int) -> None:
-    """Update camera resolution and FPS settings."""
-    if CAMERA is not None:
-        try:
-            CAMERA.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-            CAMERA.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-            CAMERA.set(cv2.CAP_PROP_FPS, fps)
-        except AttributeError:
-            print("Warning: Camera properties not supported")
-
 def generate_frames() -> Generator[bytes, None, None]:
     """Generate video frames for streaming."""
-    if CAMERA is None:
-        return
-
     while True:
-        success, frame = CAMERA.read()
-        if not success:
+        frame_data = camera_state.get_frame()
+        if frame_data is None:
             break
-        try:
-            _, buffer = cv2.imencode('.jpg', frame)
-            frame_bytes = buffer.tobytes()
-            yield (b'--frame\r\n'
-                  b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-        except AttributeError:
-            print("Warning: Video encoding not supported")
-            break
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame_data + b'\r\n')
 
 @app.route('/video')
 def video_feed() -> Response:
@@ -73,53 +98,55 @@ def run_flask_app() -> None:
 def get_ip_address() -> str:
     """Get the local machine's IP address."""
     hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    return ip_address
+    return socket.gethostbyname(hostname)
 
 def launch_server() -> None:
     """Initialize camera and launch the streaming server."""
-    global CAMERA
-    try:
-        CAMERA = cv2.VideoCapture(VIDEO_PORT)
-        if not CAMERA.isOpened():
-            print("Error: Could not open camera")
-            return
-    except AttributeError:
-        print("Error: VideoCapture not supported")
+    if not camera_state.initialize_camera():
         return
-    
-    update_camera_settings(CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS)
+
     flask_thread = threading.Thread(target=run_flask_app)
     flask_thread.daemon = True
     flask_thread.start()
-    ip_address = get_ip_address()
-    switch_to_info_page(ip_address, 5001)
+    switch_to_info_page(get_ip_address(), 5001)
 
 def create_info_ui(root_window: ctk.CTk, ip_address: str, port: int, logo_path: str) -> None:
     """Create the server information UI elements."""
     logo = Image.open(resource_path(logo_path))
     logo = logo.resize((50, 50))
     photo = ImageTk.PhotoImage(logo)
-    
+
     logo_label = ctk.CTkLabel(root_window, text="", image=photo)
     logo_label.image = photo
     logo_label.pack(pady=5)
-    
+
     info_label = ctk.CTkLabel(root_window, text="Web Server launched", font=bold_font)
     info_label.pack(pady=10)
-    
+
     table_frame = ctk.CTkFrame(root_window, border_color="white", border_width=2, corner_radius=8)
     table_frame.pack(pady=10, padx=20, fill="x")
-    
-    ip_info_label = ctk.CTkLabel(table_frame, text=f"IP Address: {ip_address}", font=("Helvetica", 14))
+
+    ip_info_label = ctk.CTkLabel(
+        table_frame,
+        text=f"IP Address: {ip_address}",
+        font=("Helvetica", 14)
+    )
     ip_info_label.pack(pady=5, padx=10, anchor="w")
-    
-    port_info_label = ctk.CTkLabel(table_frame, text=f"Port: {port}", font=("Helvetica", 14))
+
+    port_info_label = ctk.CTkLabel(
+        table_frame,
+        text=f"Port: {port}",
+        font=("Helvetica", 14)
+    )
     port_info_label.pack(pady=5, padx=10, anchor="w")
-    
+
     instruction_font = ctk.CTkFont(family="Helvetica", size=12)
     instruction_text = "Enter these addresses in the Vision Pro app to connect"
-    instruction_label = ctk.CTkLabel(root_window, text=instruction_text, font=instruction_font)
+    instruction_label = ctk.CTkLabel(
+        root_window,
+        text=instruction_text,
+        font=instruction_font
+    )
     instruction_label.pack(pady=20)
 
 def switch_to_info_page(ip_address: str, port: int) -> None:
@@ -128,13 +155,16 @@ def switch_to_info_page(ip_address: str, port: int) -> None:
         widget.destroy()
     create_info_ui(root, ip_address, port, "vp_logo.png")
 
+def initialize_camera_settings() -> None:
+    """Initialize camera settings from UI inputs."""
+    camera_state.port = int(video_port_var.get())
+    camera_state.width = int(width_entry.get())
+    camera_state.height = int(height_entry.get())
+    camera_state.fps = int(fps_entry.get())
+
 def on_launch() -> None:
     """Handle launch button click event."""
-    global VIDEO_PORT, CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS
-    VIDEO_PORT = int(video_port_var.get())
-    CAMERA_WIDTH = int(width_entry.get())
-    CAMERA_HEIGHT = int(height_entry.get())
-    CAMERA_FPS = int(fps_entry.get())
+    initialize_camera_settings()
     threading.Thread(target=launch_server, daemon=True).start()
 
 # Initialize UI
