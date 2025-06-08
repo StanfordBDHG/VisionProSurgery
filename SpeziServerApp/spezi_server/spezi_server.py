@@ -7,12 +7,17 @@ import os
 import sys
 import socket
 import threading
-from typing import Generator, Tuple
+from typing import Generator
 
-import customtkinter as ctk
-import cv2
-from flask import Flask, Response
-from PIL import Image, ImageTk
+try:
+    import cv2
+    import customtkinter as ctk
+    from flask import Flask, Response
+    from PIL import Image, ImageTk
+except ImportError as e:
+    print(f"Error importing required packages: {e}")
+    print("Please install required packages: pip install flask opencv-python customtkinter pillow")
+    sys.exit(1)
 
 app = Flask(__name__)
 
@@ -31,9 +36,12 @@ def resource_path(relative_path: str) -> str:
 def update_camera_settings(width: int, height: int, fps: int) -> None:
     """Update camera resolution and FPS settings."""
     if CAMERA is not None:
-        CAMERA.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-        CAMERA.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-        CAMERA.set(cv2.CAP_PROP_FPS, fps)
+        try:
+            CAMERA.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+            CAMERA.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+            CAMERA.set(cv2.CAP_PROP_FPS, fps)
+        except AttributeError:
+            print("Warning: Camera properties not supported")
 
 def generate_frames() -> Generator[bytes, None, None]:
     """Generate video frames for streaming."""
@@ -44,10 +52,14 @@ def generate_frames() -> Generator[bytes, None, None]:
         success, frame = CAMERA.read()
         if not success:
             break
-        _, buffer = cv2.imencode('.jpg', frame)
-        frame_bytes = buffer.tobytes()
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+        try:
+            _, buffer = cv2.imencode('.jpg', frame)
+            frame_bytes = buffer.tobytes()
+            yield (b'--frame\r\n'
+                  b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+        except AttributeError:
+            print("Warning: Video encoding not supported")
+            break
 
 @app.route('/video')
 def video_feed() -> Response:
@@ -67,7 +79,15 @@ def get_ip_address() -> str:
 def launch_server() -> None:
     """Initialize camera and launch the streaming server."""
     global CAMERA
-    CAMERA = cv2.VideoCapture(VIDEO_PORT)
+    try:
+        CAMERA = cv2.VideoCapture(VIDEO_PORT)
+        if not CAMERA.isOpened():
+            print("Error: Could not open camera")
+            return
+    except AttributeError:
+        print("Error: VideoCapture not supported")
+        return
+    
     update_camera_settings(CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS)
     flask_thread = threading.Thread(target=run_flask_app)
     flask_thread.daemon = True
@@ -98,11 +118,8 @@ def create_info_ui(root_window: ctk.CTk, ip_address: str, port: int, logo_path: 
     port_info_label.pack(pady=5, padx=10, anchor="w")
     
     instruction_font = ctk.CTkFont(family="Helvetica", size=12)
-    instruction_label = ctk.CTkLabel(
-        root_window,
-        text="Enter these addresses in the Vision Pro app to connect",
-        font=instruction_font
-    )
+    instruction_text = "Enter these addresses in the Vision Pro app to connect"
+    instruction_label = ctk.CTkLabel(root_window, text=instruction_text, font=instruction_font)
     instruction_label.pack(pady=20)
 
 def switch_to_info_page(ip_address: str, port: int) -> None:
