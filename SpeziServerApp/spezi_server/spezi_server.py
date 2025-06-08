@@ -1,84 +1,90 @@
+"""
+Spezi Server module for Vision Pro Surgery streaming application.
+Provides video streaming capabilities through a Flask web server.
+"""
+
 import os
 import sys
-import customtkinter as ctk
-from flask import Flask, Response, request
-import cv2
-import threading
 import socket
+import threading
+import customtkinter as ctk
+import cv2
+from flask import Flask, Response
 from PIL import Image, ImageTk
 
 app = Flask(__name__)
-camera = None
 
-video_port = 0
-camera_width = 640
-camera_height = 480
-camera_fps = 20
+CAMERA = None
+VIDEO_PORT = 0
+CAMERA_WIDTH = 640
+CAMERA_HEIGHT = 480
+CAMERA_FPS = 20
 
-## for pyinstaller relative paths
 def resource_path(relative_path):
+    """Get absolute path to resource for PyInstaller."""
     if hasattr(sys, '_MEIPASS'):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
 
 def update_camera_settings(width, height, fps):
-    global camera
-    camera.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-    camera.set(cv2.CAP_PROP_FPS, fps)
+    """Update camera resolution and FPS settings."""
+    global CAMERA
+    CAMERA.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+    CAMERA.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+    CAMERA.set(cv2.CAP_PROP_FPS, fps)
 
-## frame generating protocol
 def generate_frames():
-    global camera
+    """Generate video frames for streaming."""
+    global CAMERA
     while True:
-        success, frame = camera.read()
+        success, frame = CAMERA.read()
         if not success:
             break
-        else:
-            ret, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        _, buffer = cv2.imencode('.jpg', frame)
+        frame_bytes = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
 
-## streaming using HTTP response
 @app.route('/video')
 def video_feed():
+    """Stream video feed endpoint."""
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
-    
+
 def run_flask_app():
+    """Run the Flask application server."""
     app.run(host='0.0.0.0', port=5001, debug=False, use_reloader=False)
 
 def get_ip_address():
+    """Get the local machine's IP address."""
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(hostname)
     return ip_address
 
 def launch_server():
-    global camera, video_port, camera_width, camera_height, camera_fps
-    camera = cv2.VideoCapture(video_port)
-    update_camera_settings(camera_width, camera_height, camera_fps)
+    """Initialize camera and launch the streaming server."""
+    global CAMERA, VIDEO_PORT, CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS
+    CAMERA = cv2.VideoCapture(VIDEO_PORT)
+    update_camera_settings(CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS)
     flask_thread = threading.Thread(target=run_flask_app)
     flask_thread.daemon = True
     flask_thread.start()
     ip_address = get_ip_address()
     switch_to_info_page(ip_address, 5001)
 
-def switch_to_info_page(ip_address, port):
-    for widget in root.winfo_children():
-        widget.destroy()
-        
-    logo_image = Image.open(resource_path("vp_logo.png"))
-    logo_image = logo_image.resize((50, 50))
-    logo_photo = ImageTk.PhotoImage(logo_image)
+def create_info_ui(root_window, ip_address, port, logo_path):
+    """Create the server information UI elements."""
+    logo = Image.open(resource_path(logo_path))
+    logo = logo.resize((50, 50))
+    photo = ImageTk.PhotoImage(logo)
     
-    label = ctk.CTkLabel(root, text="", image=logo_photo)
-    label.image = logo_photo
-    label.pack(pady=5)
+    logo_label = ctk.CTkLabel(root_window, text="", image=photo)
+    logo_label.image = photo
+    logo_label.pack(pady=5)
     
-    info_label = ctk.CTkLabel(root, text="Web Server launched", font=bold_font)
+    info_label = ctk.CTkLabel(root_window, text="Web Server launched", font=bold_font)
     info_label.pack(pady=10)
     
-    table_frame = ctk.CTkFrame(root, border_color="white", border_width=2, corner_radius=8)
+    table_frame = ctk.CTkFrame(root_window, border_color="white", border_width=2, corner_radius=8)
     table_frame.pack(pady=10, padx=20, fill="x")
     
     ip_label = ctk.CTkLabel(table_frame, text=f"IP Address: {ip_address}", font=("Helvetica", 14))
@@ -87,10 +93,30 @@ def switch_to_info_page(ip_address, port):
     port_label = ctk.CTkLabel(table_frame, text=f"Port: {port}", font=("Helvetica", 14))
     port_label.pack(pady=5, padx=10, anchor="w")
     
-    bold_instruction_font = ctk.CTkFont(family="Helvetica", size=12)
-    instruction_label = ctk.CTkLabel(root, text="Enter these addresses in the Vision Pro app to connect", font=bold_instruction_font)
+    instruction_font = ctk.CTkFont(family="Helvetica", size=12)
+    instruction_label = ctk.CTkLabel(
+        root_window,
+        text="Enter these addresses in the Vision Pro app to connect",
+        font=instruction_font
+    )
     instruction_label.pack(pady=20)
 
+def switch_to_info_page(ip_address, port):
+    """Switch the UI to display server information."""
+    for widget in root.winfo_children():
+        widget.destroy()
+    create_info_ui(root, ip_address, port, "vp_logo.png")
+
+def on_launch():
+    """Handle launch button click event."""
+    global VIDEO_PORT, CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_FPS
+    VIDEO_PORT = int(video_port_var.get())
+    CAMERA_WIDTH = int(width_entry.get())
+    CAMERA_HEIGHT = int(height_entry.get())
+    CAMERA_FPS = int(fps_entry.get())
+    threading.Thread(target=launch_server, daemon=True).start()
+
+# Initialize UI
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("dark-blue")
 
@@ -98,6 +124,7 @@ root = ctk.CTk()
 root.title("Web Server")
 root.geometry("400x500")
 
+# Create main UI elements
 logo_image = Image.open(resource_path("vp_logo.png"))
 logo_image = logo_image.resize((50, 50))
 logo_photo = ImageTk.PhotoImage(logo_image)
@@ -133,15 +160,8 @@ fps_entry = ctk.CTkEntry(root)
 fps_entry.insert(0, "20")
 fps_entry.pack(pady=5)
 
-def on_launch():
-    global video_port, camera_width, camera_height, camera_fps
-    video_port = int(video_port_var.get())
-    camera_width = int(width_entry.get())
-    camera_height = int(height_entry.get())
-    camera_fps = int(fps_entry.get())
-    threading.Thread(target=launch_server, daemon=True).start()
-
 launch_button = ctk.CTkButton(root, text="Launch", command=on_launch)
 launch_button.pack(pady=20)
 
-root.mainloop()
+if __name__ == '__main__':
+    root.mainloop()

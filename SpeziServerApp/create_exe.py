@@ -1,3 +1,7 @@
+"""
+Script to build a standalone executable of the Spezi Server application.
+"""
+
 import argparse
 import subprocess
 import sys
@@ -11,7 +15,7 @@ args = parser.parse_args()
 
 script_path = Path(args.script).resolve()
 if not script_path.exists():
-    print(f"Error: The script '{script_path}' does not exist.")
+    print("Error: The script '{}' does not exist.".format(script_path))
     sys.exit(1)
 
 if not args.script.endswith(".py"):
@@ -20,17 +24,17 @@ if not args.script.endswith(".py"):
 
 vp_logo_path = script_path.parent / "vp_logo.png"
 if not vp_logo_path.exists():
-    print(f"'vp_logo.png' not found in directory")
+    print("'vp_logo.png' not found in directory")
     data_option = []
 else:
-    data_option = [f"--add-data={vp_logo_path}{os.pathsep}."]
+    data_option = ["--add-data={}{}{}".format(vp_logo_path, os.pathsep, ".")]
 
 output_dir = Path(args.location).resolve() if args.location else Path.cwd()
 
 cmd = [
     "pyinstaller",
     "--onefile",
-    f"--distpath={output_dir}",
+    "--distpath={}".format(output_dir),
     *data_option,
     str(script_path)
 ]
@@ -39,7 +43,7 @@ print("\nBuilding the executable...")
 try:
     subprocess.run(cmd, check=True)
     print("\nExecutable built successfully!")
-    print(f"You can find it here: {output_dir}")
+    print("You can find it here: {}".format(output_dir))
 except subprocess.CalledProcessError:
     print("\nError while building the executable.")
     sys.exit(1)
