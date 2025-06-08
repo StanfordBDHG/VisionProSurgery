@@ -10,11 +10,7 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
-    @State private var width: Int = 640
-    @State private var height: Int = 480
-    @State private var fps: Int = 20
     
-
     var body: some View {
         ZStack {
             Color.black
