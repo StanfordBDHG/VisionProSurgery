@@ -86,7 +86,8 @@ platform :ios do
       destination: "generic/platform=visionOS",
       xcargs: [
         "-skipPackagePluginValidation",
-        "-skipMacroValidation"
+        "-skipMacroValidation",
+        "EXCLUDED_SOURCE_FILE_NAMES='Assets.xcassets'"
       ]
     )
   end
