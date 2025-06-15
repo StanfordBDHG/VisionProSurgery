@@ -8,8 +8,6 @@
 	<dict>
 		<key>edu.stanford.visionprosurgery</key>
 		<string>VisionProSurgery</string>
-		<key>edu.stanford.visionprosurgery.watchapp</key>
-		<string>VisionProSurgeryWatchApplication</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution: Paul Schmiedmayer (637867499T)</string>
