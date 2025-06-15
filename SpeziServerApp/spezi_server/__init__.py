@@ -1,3 +1,11 @@
+#
+# This source file is part of the StanfordBDHG VisionProSurgery project
+#
+# SPDX-FileCopyrightText: 2025 Stanford University and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+#
+
 """
 SpeziServer package for Vision Pro Surgery streaming application.
 """

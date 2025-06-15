@@ -1,3 +1,11 @@
+#
+# This source file is part of the StanfordBDHG VisionProSurgery project
+#
+# SPDX-FileCopyrightText: 2025 Stanford University and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+#
+
 """
 Script to build a standalone executable of the Spezi Server application.
 """

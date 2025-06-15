@@ -83,6 +83,7 @@ platform :ios do
       skip_archive: true,
       skip_codesigning: true,
       derived_data_path: ".derivedData",
+      destination: "generic/platform=visionOS",
       xcargs: [
         "-skipPackagePluginValidation",
         "-skipMacroValidation"
@@ -98,7 +99,7 @@ platform :ios do
         "-skipPackagePluginValidation",
         "-skipMacroValidation"
       ],
-      destination: "generic/platform=iOS",
+      destination: "generic/platform=visionOS",
       output_directory: ".build",
       archive_path: ".build/VisionProSurgery.xcarchive",
     )

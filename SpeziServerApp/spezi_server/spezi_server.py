@@ -1,3 +1,11 @@
+#
+# This source file is part of the StanfordBDHG VisionProSurgery project
+#
+# SPDX-FileCopyrightText: 2025 Stanford University and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+#
+
 """
 Spezi Server module for Vision Pro Surgery streaming application.
 Provides video streaming capabilities through a Flask web server.
