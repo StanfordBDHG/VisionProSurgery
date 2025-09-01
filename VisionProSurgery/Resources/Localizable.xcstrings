@@ -1,0 +1,147 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "ACCESSIBILITY_ICON_LABEL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A logo image for the Spezi Vision Pro app that consists of a Vision Pro with a medical cross in the middle of it."
+          }
+        }
+      }
+    },
+    "CONNECTION_ALERT_MESSAGE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You entered an invalid IP address or port. Make sure your video stream has been started using Spezi Server."
+          }
+        }
+      }
+    },
+    "CONNECTION_ALERT_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connection Failed"
+          }
+        }
+      }
+    },
+    "CONNECTION_BUTTON_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establish Connection"
+          }
+        }
+      }
+    },
+    "Invalid URL" : {
+
+    },
+    "IP_TEXTFIELD_PLACEHOLDER" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter IP address"
+          }
+        }
+      }
+    },
+    "Ok" : {
+
+    },
+    "ONBOARDING_APP_SUBTITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vision pro enabled streaming system"
+          }
+        }
+      }
+    },
+    "ONBOARDING_APP_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi VP Surgery"
+          }
+        }
+      }
+    },
+    "ONBOARDING_DESCRIPTION" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect your Vision Pro to a live laproscopic video tower stream over your local IP. Must have Spezi Server app installed on your laptop to start server."
+          }
+        }
+      }
+    },
+    "PORT_ENTRY_LABEL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Port Pin"
+          }
+        }
+      }
+    },
+    "PORT_ENTRY_SUBTITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set up video stream"
+          }
+        }
+      }
+    },
+    "SAVE_BUTTON_DESCRIPTION" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save IP and Port Number"
+          }
+        }
+      }
+    },
+    "START_BUTTON_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

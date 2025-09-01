@@ -1,5 +1,5 @@
 #
-# This source file is part of the StanfordBDHG Template Application project
+# This source file is part of the StanfordBDHG VisionProSurgery project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -12,6 +12,4 @@ authors:
 - family-names: "Schmiedmayer"
   given-names: "Paul"
   orcid: "https://orcid.org/0000-0002-8607-9148"
-title: "TemplateApplication"
-doi: 10.5281/zenodo.7633671
-url: "https://github.com/StanfordBDHG/TemplateApplication"
+title: "VisionProSurgery"

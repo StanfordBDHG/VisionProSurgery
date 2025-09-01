@@ -1,5 +1,5 @@
 #
-# This source file is part of the StanfordBDHG Template Application project
+# This source file is part of the StanfordBDHG VisionProSurgery project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -18,6 +18,38 @@ on:
   workflow_call:
 
 jobs:
+  pylint:
+    name: PyLint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - name: Install Infrastructure
+        run: |
+          python -m pip install --upgrade pip
+          cd SpeziServerApp
+          pip install -e .
+          pip install toml
+          pip install pylint
+      - name: Analysing the code with pylint
+        run: |
+          cd SpeziServerApp
+          pylint spezi_server create_exe.py
+  black_lint:
+    name: Black Code Formatter Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - name: Install Black
+        run: pip install black[jupyter]
+      - name: Check code formatting with Black
+        run: |
+          cd SpeziServerApp
+          black spezi_server create_exe.py
   reuse_action:
     name: REUSE Compliance Check
     uses: StanfordBDHG/.github/.github/workflows/reuse.yml@v2
@@ -44,7 +76,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [iphone, ipad, apple_watch, apple_tv, vision_pro]
+        platform: [vision_pro]
     with:
       # We use the self-hosted runners as the main GitHub Action runners do not have the necessary performance.
       # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
@@ -56,6 +88,6 @@ jobs:
     needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: iphone.xcresult ipad.xcresult apple_watch.xcresult apple_tv.xcresult vision_pro.xcresult
+      coveragereports: vision_pro.xcresult
     secrets:
       token: ${{ secrets.CODECOV_TOKEN }}

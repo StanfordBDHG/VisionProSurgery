@@ -1,5 +1,5 @@
 #
-# This source file is part of the StanfordBDHG Template Application project
+# This source file is part of the StanfordBDHG VisionProSurgery project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -7,5 +7,5 @@
 #
 
 ignore:
-- TemplateApplicationUITests
-- TemplateApplicationTests
+- VisionProSurgeryUITests
+- VisionProSurgeryTests
